@@ -1,0 +1,32 @@
+{
+    "template": "protein*",
+   "settings": {
+      "number_of_shards": 1,
+      "number_of_replicas": 0,
+    "index" : {
+        "refresh_interval" : "60s"
+ }
+},
+"mappings": {
+  "Protein": {
+    "properties":
+      {
+      "sequence":{ "type": "text" },
+      "name":{ "type": "text", "fields": { "keyword": {"type": "keyword","ignore_above": 256}}},
+      "entry_dataset":{ "type": "text", "fields": { "keyword": {"type": "keyword","ignore_above": 256}}},
+      "entry_version":{ "type": "text", "fields": { "keyword": {"type": "keyword","ignore_above": 256}}},
+      "organism_common":{ "type": "text", "fields": { "keyword": {"type": "keyword","ignore_above": 256}}},
+      "organism_scientific":{ "type": "text", "fields": { "keyword": {"type": "keyword","ignore_above": 256}}},
+      "recommendedName_fullName":{ "type": "text", "fields": { "keyword": {"type": "keyword","ignore_above": 256}}},
+      "@timestamp": {"type": "date"},
+      "entry_created": {"type": "date"},
+      "entry_modified": {"type": "date"},
+      "accession":{ "type": "text", "fields": { "keyword": {"type": "keyword","ignore_above": 256}}},
+      "alternativeName_fullName":{ "type": "text", "fields": { "keyword": {"type": "keyword","ignore_above": 256}}},
+      "gene_name_primary":{ "type": "text", "fields": { "keyword": {"type": "keyword","ignore_above": 256}}},
+      "gene_name_synonym":{ "type": "text", "fields": { "keyword": {"type": "keyword","ignore_above": 256}}},
+      "taxon":{ "type": "text", "fields": { "keyword": {"type": "keyword","ignore_above": 256}}}
+      }
+    }
+  }
+}
